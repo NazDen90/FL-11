@@ -26,7 +26,7 @@
                     </nav>
                     <hr>
                     <p>
-                        Lorem ipsum dolor sit amet, <a href="#">test link</a> adipiscing
+                        Lorem ipsum dolor sit amet, <a href="#" >test link</a> adipiscing
                         elit. <strong> This is strong </strong>. Nullam dignissim
                         convallis est. Quisque aliquam. <em> This is emphasized </em>.
                         Donec faucibus. Nunc iaculis suscipit dui. 5 <sup>3</sup> = 125.
@@ -49,9 +49,9 @@
                         <del>
                             Dinner`s at 5:00.
                         </del>
-                        <mark>
+                        <ins>
                             Let's make that 7.
-                        </mark>
+                        </ins>
                         This <s>text</s> has been struck.
                     </p>
                     <hr>
@@ -73,7 +73,7 @@
 
                 <section id="text">
                     <h2>Text formats</h2>
-                    <p>Article Text</p>
+                    <h3>Article Text</h3>
                     <article>
                         <h2>Article title</h2>
                         <p>Article description</p>
@@ -86,14 +86,14 @@
     is displayed in a fixed-width
 font, and it preserves
 both           spaces and
-line breaks
+    line breaks
               </pre>
                     <h3>This is code</h3>
                     <pre><code>
 .wrapper {
-display: flex;
-vertical-align: middle;
-justify-content: center;
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
 }
                 </code>
               </pre>
@@ -137,11 +137,13 @@ justify-content: center;
                         <dt>JavaScript</dt>
                         <dd>JavaScript is the Programming Language for the Web</dd>
                     </dl>
-                    <select>
-                        <option value="HTML">HTML</option>
-                        <option value="CSS">CSS</option>
-                        <option value="JS">JS</option>
-                    </select>
+                    <label>Select option
+                        <select>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="JS">JS</option>
+                        </select>
+                    </label>
                     <hr>
                     <hr>
                 </section>
@@ -194,17 +196,18 @@ justify-content: center;
                     </blockquote>
                     <hr>
                     <form action="#">
-                        <fieldset>First name: <input type="text"/></fieldset>
-                        <fieldset>Second name: <input type="text"/></fieldset>
-                        <fieldset>Email: <input type="email"/></fieldset>
-                        <fieldset>Password: <input type="password"/></fieldset>
-                        <textarea name="textarea"
-                                  id="textarea"
-                                  cols="34"
-                                  rows="5"
-                        ></textarea>
-                        <br>
-                        <input type="submit" value="Submit"/>
+                        <label>First name: <input type="text"/></label>
+                        <label>Second name: <input type="text"/></label>
+                        <label>Email: <input type="email"/></label>
+                        <label>Password: <input type="password"/></label>
+                        <label>
+                            <textarea name="textarea"
+                                      id="textarea"
+                                      cols="30"
+                                      rows="5"
+                            ></textarea>
+                        </label>
+                        <button type="submit">Submit</button>
                     </form>
                 </section>
 
