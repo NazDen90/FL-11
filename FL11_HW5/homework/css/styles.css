@@ -375,7 +375,7 @@ footer p:last-of-type {
     }
 
     .wrapper {
-        min-width: 460px;
+        max-width: 460px;
     }
 
     header {
