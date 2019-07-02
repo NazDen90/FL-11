@@ -190,6 +190,7 @@ footer {
     display: grid;
     align-content: center;
     grid-template-columns: 1fr 130px;
+    margin-bottom: 10px;
 }
 
 footer p:last-of-type {
