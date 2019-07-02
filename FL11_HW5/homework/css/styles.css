@@ -1,0 +1,495 @@
+.post-1 {
+    background: #B71757;
+}
+
+.post-2 {
+    background: #0D7E71;
+}
+
+.post-3 {
+    background: #b1660e;
+}
+
+.post-4 {
+    background: #d12767;
+}
+
+.post-5 {
+    background: #2d95bb;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #0b192f;
+    font-family: roboto, sans-serif;
+    font-weight: 100;
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    height: 100px;
+    background-color: #162b4d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.burger {
+}
+
+.burger span {
+    display: none;
+    width: 24px;
+    height: 1px;
+    margin-bottom: 8px;
+    background-color: #fff;
+}
+
+h1 {
+    color: #fff;
+    font-weight: 100;
+}
+
+h1 span {
+    color: red;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 39px 2vw 38px 2vw;
+    font-size: larger;
+}
+
+a:hover {
+    background-color: rgba(184, 184, 184, .1);
+}
+
+main {
+    margin: 2% 0;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 73% 25%;
+    grid-gap: 2%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.articles article {
+    display: grid;
+    grid-template-areas: 'i t';
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.articles article picture {
+    grid-area: i;
+}
+
+.articles article .article-text {
+    grid-area: t;
+    position: relative;
+    display: grid;
+    align-content: start;
+    padding: 42px 42px 0 42px;
+}
+
+.articles article:nth-child(even) {
+    grid-template-areas: 't i';
+}
+
+.articles article:last-of-type {
+    grid-template-areas: 't t';
+    padding-bottom: 42px;
+}
+
+.articles article:last-of-type h2, .articles article:last-of-type p {
+    width: 90%;
+}
+
+.articles h2 {
+    width: 280px;
+    font-size: 56px;
+    font-weight: 100;
+    line-height: 1;
+}
+
+.articles p {
+    margin-top: 28px;
+    line-height: 2;
+    font-weight: 100;
+    font-size: 17px;
+}
+
+.articles time {
+    position: absolute;
+    justify-self: end;
+    font-size: 53px;
+    opacity: .5;
+    display: grid;
+    padding: 17px;
+}
+
+.articles time span {
+    font-size: 31px;
+}
+
+.articles article:nth-child(even) time {
+    justify-self: start;
+}
+
+.articles article:nth-child(even) h2 {
+    justify-self: end;
+    text-align: end;
+}
+
+.articles article:nth-child(even) p {
+    justify-self: end;
+    text-align: end;
+}
+
+aside article:last-of-type {
+    margin-top: 28px;
+}
+
+aside .article-text {
+    background-color: #fff;
+    color: #000;
+    padding: 31px;
+}
+
+aside .article-text h2 {
+    font-weight: 100;
+    font-size: 40px;
+}
+
+aside .article-text p {
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+footer {
+    height: 100px;
+    padding: 0 50px;
+    background-color: #162b4d;
+    color: #fff;
+    opacity: .3;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr 130px;
+}
+
+footer p:last-of-type {
+    justify-self: end;
+}
+
+.articles picture:hover {
+    opacity: .5;
+}
+
+.articles .article-text:hover h2, .articles .article-text:hover p {
+    color: rgba(255, 255, 255, .6);
+}
+
+@media screen and (max-width: 1400px) and (min-width: 769px) {
+    .articles article .article-text {
+        padding: 3vw 3vw 0 3vw;
+    }
+
+    .articles article:last-of-type {
+        padding-bottom: 2vw;
+    }
+
+    .articles h2 {
+        width: 20vw;
+        font-size: 4vw;
+    }
+
+    .articles p {
+        margin-top: 2vw;
+        font-size: 1.2vw;
+    }
+
+    .articles time {
+        font-size: 3.8vw;
+        padding: 1.2vw;
+    }
+
+    .articles time span {
+        font-size: 2.2vw;
+    }
+
+    aside article:last-of-type {
+        margin-top: 2vw;
+    }
+
+    aside .article-text {
+        padding: 2.2vw;
+    }
+
+    aside .article-text h2 {
+        font-size: 2.8vw;
+    }
+
+    aside .article-text p {
+        margin-top: 1.4vw;
+        font-size: 1.2vw;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .wrapper {
+        max-width: 768px;
+    }
+
+    header {
+        flex-direction: column-reverse;
+        padding: 3vw 0;
+    }
+
+    .burger span {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    main {
+        grid-template-columns: 68% 30%;
+    }
+
+    .articles article {
+        grid-template-columns: none;
+        grid-template-areas: 'i' 't';
+        grid-template-rows: repeat(2, min-content);
+    }
+
+    .articles article:nth-child(even) {
+        grid-template-areas: 'i' 't';
+    }
+
+    .articles article:last-of-type {
+        padding-bottom: 2vw;
+        grid-template-areas: 't' 't';
+    }
+
+    .articles article:last-of-type h2, .articles article:last-of-type p {
+        width: 90%;
+    }
+
+    .articles article .article-text {
+        align-content: start;
+        grid-template-areas: 'h' 'p' 't';
+        grid-template-rows: repeat(3, min-content);
+        padding: 3vw 3vw 0 3vw;
+    }
+
+    .articles h2 {
+        grid-area: h;
+        width: 40vw;
+        font-size: 6vw;
+    }
+
+    .articles p {
+        grid-area: p;
+        margin-top: 2vw;
+        font-size: 2vw;
+    }
+
+    .articles time {
+        grid-area: t;
+        position: relative;
+        justify-self: center;
+        align-self: end;
+    }
+
+    .articles article:nth-child(even) time {
+        justify-self: center;
+    }
+
+    .articles article:nth-child(even) h2 {
+        justify-self: start;
+        text-align: start;
+    }
+
+    .articles article:nth-child(even) p {
+        justify-self: start;
+        text-align: start;
+    }
+
+    aside article:last-of-type {
+        margin-top: 2vw;
+    }
+
+    aside .article-text {
+        padding: 2.2vw;
+    }
+
+    aside .article-text h2 {
+        font-size: 2.8vw;
+    }
+
+    aside .article-text p {
+        margin-top: 1.4vw;
+        font-size: 2vw;
+    }
+
+    footer {
+        padding: 10px 50px;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        text-align: center;
+    }
+
+    footer p:first-of-type {
+        align-self: end;
+    }
+
+    footer p:last-of-type {
+        width: 130px;
+        justify-self: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .wrapper {
+        min-width: 460px;
+    }
+
+    header {
+        flex-direction: column-reverse;
+        padding: 3vw 0;
+    }
+
+    .burger span {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    main {
+        grid-template-columns: none;
+        grid-gap: 0;
+    }
+
+    .articles article {
+        grid-template-columns: none;
+        grid-template-areas: 'i' 't';
+        grid-template-rows: repeat(2, min-content);
+    }
+
+    .articles article:nth-child(even) {
+        grid-template-areas: 'i' 't';
+    }
+
+    .articles article:last-of-type {
+        padding-bottom: 2vw;
+        grid-template-areas: 't' 't';
+    }
+
+    .articles article:last-of-type h2, .articles article:last-of-type p {
+        width: 90%;
+    }
+
+    .articles article .article-text {
+        align-content: start;
+        grid-template-areas: 'h' 'p' 't';
+        grid-template-rows: repeat(3, min-content);
+        padding: 3vw 3vw 0 3vw;
+    }
+
+    .articles h2 {
+        grid-area: h;
+        width: 80vw;
+        font-size: 10vw;
+    }
+
+    .articles p {
+        grid-area: p;
+        margin-top: 3vw;
+        font-size: 3.5vw;
+    }
+
+    .articles time {
+        grid-area: t;
+        position: relative;
+        justify-self: center;
+        align-self: end;
+    }
+
+    .articles article:nth-child(even) time {
+        justify-self: center;
+    }
+
+    .articles article:nth-child(even) h2 {
+        justify-self: start;
+        text-align: start;
+    }
+
+    .articles article:nth-child(even) p {
+        justify-self: start;
+        text-align: start;
+    }
+
+    aside article:last-of-type {
+        margin-top: 2vw;
+    }
+
+    aside .article-text {
+        padding: 2.2vw;
+    }
+
+    aside .article-text h2 {
+        font-size: 6vw;
+    }
+
+    aside .article-text p {
+        margin-top: 2vw;
+        font-size: 3vw;
+    }
+
+    footer {
+        margin-top: 40px;
+        padding: 10px 50px;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        text-align: center;
+    }
+
+    footer p:first-of-type {
+        align-self: end;
+    }
+
+    footer p:last-of-type {
+        width: 130px;
+        justify-self: center;
+    }
+}
+
