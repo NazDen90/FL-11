@@ -31,6 +31,8 @@ if (!!email === false) {
                         alert('You wrote the wrong password.')
                     }
                 }
+            } else {
+                alert('Wrong password.');
             }
         } else {
             alert('You have failed the change.');
