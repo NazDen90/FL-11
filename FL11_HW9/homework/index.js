@@ -86,7 +86,7 @@ const daysBetween = (date1, date2) => {
 console.log('daysBetween(new Date(\'2016-03-18T00:00:00\'), new Date(\'2016-04-19T00:00:00\'))',
     daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00')));
 
-//data
+
 let data = [
     {
         '_id': '5b5e3168c6bf40f2c1235cd6',
