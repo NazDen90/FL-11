@@ -13,7 +13,6 @@ const UIController = (() => {
         addItmInput: document.querySelector('.addItemInput'),
         actionItmList: document.querySelector('.actions'),
         addItemForm: document.querySelector('.addItemForm'),
-        maxItemText: document.querySelector('.maxItemText'),
         deleteItmBtn: document.querySelector('.deleteItemImg'),
         actionItm: document.querySelector('.action')
     };
@@ -35,7 +34,7 @@ const UIController = (() => {
             return DOMNodes;
         },
         checkValue(e, actionLength) {
-            const TEN =10;
+            const TEN = 10;
 
             if (e.target.value.length > 0 && actionLength < TEN) {
                 DOMNodes.addItmBtn.removeAttribute('disabled');
@@ -75,14 +74,15 @@ const UIController = (() => {
             DOMNodes.addItemForm.insertAdjacentHTML('beforebegin', text);
         },
         deleteTextMaxItem() {
-            const text = DOMNodes.maxItemText;
-            if (text) {
-                DOMNodes.maxItemText.parentElement.removeChild(DOMNodes.maxItemText);
+            let maxItemText = document.querySelector('.maxItemText');
+
+            if (maxItemText) {
+                maxItemText.parentElement.removeChild(maxItemText);
             }
         },
         removeAction(id) {
             let el = document.getElementById(`${id}`);
-            if (el){
+            if (el) {
                 DOMNodes.actionItmList.removeChild(el);
             }
         },
@@ -115,7 +115,7 @@ const ModelController = (() => {
 
     return {
         addAction(name) {
-            const TEN =10;
+            const TEN = 10;
 
             if (state.actions.length < TEN) {
                 const action = new Action(generateId(), name);
@@ -162,7 +162,7 @@ const Controller = ((UI, Model) => {
         });
 
     };
-    const TEN =10;
+    const TEN = 10;
 
     const addItem = () => {
         let arrLength = Model.addAction(UI.getName());
