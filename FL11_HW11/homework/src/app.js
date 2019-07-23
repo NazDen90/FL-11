@@ -19,7 +19,7 @@ const UIController = (() => {
 
     const createInput = () => {
         return `  
-    <label>
+    <label class="editForm">
       <input type="text" class="editInput">
       <i class="material-icons saveNameImg">save</i>
     </label>
@@ -46,7 +46,7 @@ const UIController = (() => {
         },
         renderAction(action) {
             const actionItem = `
-  <li class="action" id="${action.id}">
+  <li class="action" id="${action.id}" draggable="true">
     <label class="itemCheckContainer">
       <input type="checkbox" class="itemCheck">
       <span class="checkmark"></span>
@@ -88,7 +88,7 @@ const UIController = (() => {
         },
         renderEditField(id) {
             let el = document.getElementById(`${id}`);
-            if (el) {
+            if (el && !document.querySelector('.editForm')) {
                 el.insertAdjacentHTML('afterEnd', createInput());
             }
         }
@@ -161,6 +161,23 @@ const Controller = ((UI, Model) => {
             }
         });
 
+        // DomNodes.actionItmList.addEventListener("dragstart", function(event) {
+        //     debugger;
+        //     event.dataTransfer.setData("Text", event.target.id);
+        //     document.getElementById("demo").innerHTML = "Started to drag the p element.";
+        // });
+
+        // document.addEventListener("dragover", function(event) {
+        //     event.preventDefault();
+        // });
+        //
+        // document.addEventListener("drop", function(event) {
+        //     event.preventDefault();
+        //     var data = event.dataTransfer.getData("Text");
+        //     event.target.appendChild(document.getElementById(data));
+        //     document.getElementById("demo").innerHTML = "The p element was dropped";
+        // });
+
     };
     const TEN = 10;
 
@@ -184,10 +201,12 @@ const Controller = ((UI, Model) => {
     let editItem = (id) => {
         UI.renderEditField(id);
         document.querySelector('.saveNameImg').addEventListener('click', () => {
-            let name = document.querySelector('.editInput').value;
-            document.querySelector('.actions').removeChild(document.querySelector('.saveNameImg').parentElement);
-            Model.editAction(id, name);
-            document.getElementById(`${id}`).querySelector('.itemText').textContent = name;
+            if (document.querySelector('.editInput')) {
+                let name = document.querySelector('.editInput').value;
+                document.querySelector('.actions').removeChild(document.querySelector('.saveNameImg').parentElement);
+                Model.editAction(id, name);
+                document.getElementById(`${id}`).querySelector('.itemText').textContent = name;
+            }
         })
     };
 
